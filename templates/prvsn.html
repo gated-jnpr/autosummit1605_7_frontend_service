@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+<head>
+  <script type="text/javascript">
+  <!--
+    function toggle_check(what){
+      if(what.checked)
+        {document.pyeztoolbox.lastaddressinput.disabled=1}
+      else
+        {document.pyeztoolbox.lastaddressinput.disabled=0}
+      }
+  -->
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<style>
+h1 {
+  background-image: url('/static/background.png');
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 23px;
+  padding: 5px 3px;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+h1.elegantshadow {
+  color: #75fae5;
+  background-color: #e7e5e4;
+  letter-spacing: .15em;
+  text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777;
+}
+h1.deepshadow {
+  color: #e0dfdc;
+  background-color: #333;
+  letter-spacing: .2em;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #75fae5, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+}
+h1.insetshadow {
+  color: #75fae5;
+  background-color: #2d2d2d;
+  letter-spacing: .1em;
+  text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
+}
+h1.retroshadow {
+  color: #75fae5;
+  background-color: #d5d5d5;
+  letter-spacing: .05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+body {
+        background-image: url('/static/background.png');
+}
+</style>
+<body><h1 class='deepshadow'>Provision Services</h1><h1 class='elegantshadow'>
+    <form class="container text-center" name="pyeztoolbox" method="POST" action="/provision_services"><br>
+        <center><strong>Customer Name</strong><br><input type="text" name="customername" enabled><br><br>
+        <center><strong>Service 1 - </strong><input type="checkbox" name="service1" onClick="toggle_check(this)" unchecked><br><br>
+        <center><strong>Service 2 - </strong><input type="checkbox" name="service2" onClick="toggle_check(this)" unchecked><br><br>
+        <center><strong>Service 3 - </strong><input type="checkbox" name="service3" onClick="toggle_check(this)" unchecked><br><br>
+        <center><strong>Service 4 - </strong><input type="checkbox" name="service4" onClick="toggle_check(this)" unchecked><br><br>
+        <center><strong>Service 5 - </strong><input type="checkbox" name="service5" onClick="toggle_check(this)" unchecked><br><br>
+        <center><strong>Campus - </strong><input type="checkbox" name="campus" onClick="toggle_check(this)" unchecked><br><br>
+        <center><strong>Internet - </strong><input type="checkbox" name="internet" onClick="toggle_check(this)" unchecked><br><br>
+        <center><strong>Legacy Network - </strong><input type="checkbox" name="legacy" onClick="toggle_check(this)" unchecked><br><br>
+        <center><button type="submit" name="button" class="btn btn-primary btn-lg" enabled><strong>OK</strong></button></center><br></h1>
+        <center><strong>Click the "OK" button above to gather info</strong></center>
+        <form class="container text-center" name="main" method="GET" action="/">
+        <br><center><button type="button" name="button" class="btn btn-primary btn-lg" onClick="location.href='../'" enabled><strong>Return to Main Page</strong></button><br>
+        </form><br>
+    </form>
+</body>
+</html>
+{% endblock %}
